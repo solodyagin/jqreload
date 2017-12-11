@@ -13,18 +13,20 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="jq.reload.css">
 <script>
-$('#panel1').jqreload({
-	idle: 4000,
-	interval: 60000,
-	beforeLoad: function ($e) {
-		$e.find('.reload-data table').empty();
-	},
-	afterLoad: function ($e, data) {
-		var $table = $e.find('.reload-data table');
-		$.each(data, function (key, value) {
-			$('<tr><td>' + key + '</td><td>' + value + '</td></tr>').appendTo($table);
-		});
-	}
+$(document).ready(function () {
+	$('#panel1').jqreload({
+		idle: 4000,
+		interval: 60000,
+		beforeLoad: function ($e) {
+			$e.find('.reload-data table').empty();
+		},
+		afterLoad: function ($e, data) {
+			var $table = $e.find('.reload-data table');
+			$.each(data, function (key, value) {
+				$('<tr><td>' + key + '</td><td>' + value + '</td></tr>').appendTo($table);
+			});
+		}
+	});
 });
 </script>
 <div id="panel1" class="panel panel-default" data-url="/fetch-data">
