@@ -1,0 +1,19 @@
+.reload-panel {
+	min-height: 180px;
+	position: relative;
+}
+.reload-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba(0,0,0,.1);
+	width: 100%;
+	height: 100%;
+	display: none;
+	text-align: center;
+	z-index: 4;
+}
+.reload-spinner {
+	padding: 30px;
+	opacity: .8;
+}
