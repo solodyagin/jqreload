@@ -17,6 +17,7 @@ $(document).ready(function () {
 	$('#panel1').jqreload({
 		idle: 4000,
 		interval: 60000,
+		dataType: 'json',
 		beforeLoad: function ($e) {
 			$e.find('.reload-data table').empty();
 		},
