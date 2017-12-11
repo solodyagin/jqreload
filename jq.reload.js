@@ -2,7 +2,7 @@
  * jqReload - плагин jQuery для автообновления информации на bootstrap-панелях
  * Основан на https://github.com/saschavv/bootstrap-reload
  * Лицензия: MIT
- * Версия: 1.0
+ * Версия: 1.0.1
  * @requires jQuery v1.12.4+, Font Awesome v4.7.0+, Bootstrap v3.3.7
  */
 
@@ -14,6 +14,7 @@
 			idle: 3000, // Задержка перед первоначальной загрузкой	
 			autoReload: true, // Автообновление
 			interval: 60000, // Интервал автообновления
+			dataType: 'html', // Тип данных
 			beforeLoad: false, // function ($e)
 			afterLoad: false // function ($e, data)
 		}
@@ -49,8 +50,7 @@
 			$.ajax({
 				type: 'GET',
 				url: $e.data('url'),
-				dataType: 'json',
-				async: true,
+				dataType: _options.dataType,
 				beforeSend: function() {
 					if (_options.beforeLoad) {
 						_options.beforeLoad($e);
