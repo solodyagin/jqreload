@@ -11,9 +11,9 @@
 ## Применение
 ```html
 <div class="container">
-	<!-- [refresh widget] -->
+	<!-- [jqReload widget] -->
 	<div class="panel panel-default" data-url="/fetch-data">
-		<div class="panel-heading">Panel 1 <a class="pull-right" href="javascript:;"><span class="reload-button fa fa-refresh"></span></a></div>
+		<div class="panel-heading">jqReload Widget <a class="pull-right" href="javascript:;"><span class="reload-button fa fa-refresh"></span></a></div>
 		<div class="panel-body reload-panel">
 			<div class="reload-container"><i class="reload-spinner fa fa-spinner fa-spin fa-5x"></i></div>
 			<div class="reload-data">
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- [/refresh widget] -->
+	<!-- [/jqReload widget] -->
 </div>
 ```
 ```javascript
@@ -48,10 +48,11 @@ $(".panel").jqreload(options);
 ```html
 <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.rawgit.com/solodyagin/jqreload/master/jq.reload.js"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="jq.reload.css">
+<link rel="stylesheet" href="//cdn.rawgit.com/solodyagin/jqreload/master/jq.reload.css">
 
 <script>
 $(document).ready(function () {
