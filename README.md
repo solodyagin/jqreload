@@ -17,7 +17,7 @@
 		<div class="panel-body reload-panel">
 			<div class="reload-container"><i class="reload-spinner fa fa-spinner fa-spin fa-5x"></i></div>
 			<div class="reload-data">
-				<table class="table table-bordered table-condensed"></table>
+			<!-- The Received data will be placed here -->
 			</div>
 		</div>
 	</div>
