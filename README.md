@@ -1,7 +1,7 @@
 # jqReload
 jQuery plugin for autoreload information in Bootstrap Panels
 
-Based on[bootstrap-reload](https://github.com/saschavv/bootstrap-reload)
+Based on [bootstrap-reload](https://github.com/saschavv/bootstrap-reload)
 
 *Read this in other languages: [English](README.md), [Russian](README.ru.md).*
 
