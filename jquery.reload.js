@@ -1,20 +1,20 @@
 /*
- * jqReload - плагин jQuery для автообновления информации на bootstrap-панелях
- * Основан на https://github.com/saschavv/bootstrap-reload
- * Лицензия: MIT
- * Версия: 1.0.1
- * @requires jQuery v1.12.4+, Font Awesome v4.7.0+, Bootstrap v3.3.7
+ * jqReload - jQuery plugin for autoreload information in Bootstrap Panels
+ * Based on https://github.com/saschavv/bootstrap-reload
+ * @license: MIT
+ * @version: 1.0.2
+ * @requires: jQuery v1.12.4+, Font Awesome v4.7.0+, Bootstrap v3.3.7
  */
 
 (function ($) {
 	'use strict';
 	$.jqreload = {
 		defaults: {
-			autoLoad: true, // Первоначальная загрузка
-			idle: 3000, // Задержка перед первоначальной загрузкой	
-			autoReload: true, // Автообновление
-			interval: 60000, // Интервал автообновления
-			dataType: 'html', // Тип данных
+			autoLoad: true, // Initial load
+			delay: 3000, // Delay of initial load
+			autoReload: true, // Autoreload
+			interval: 60000, // Interval of autoreload
+			dataType: 'html', // The type of data that you're expecting back from the server (see jQuery.ajax())
 			beforeLoad: false, // function ($e)
 			afterLoad: false // function ($e, data)
 		}
@@ -22,22 +22,22 @@
 	var jqReload = function ($e, options) {
 		var _data = $e.data('jqreload');
 		var _userOptions = (typeof options === 'function') ? {afterLoad: options} : options;
-		var _options = $.extend({}, $.jqreload.defaults, _userOptions, _data || {}); // Устанавливаем конфигурационные параметры
+		var _options = $.extend({}, $.jqreload.defaults, _userOptions, _data || {});
 		var _init = function () {
-			_options.reloadContainer = $e.find('.reload-container'); // Контейнер для анимации обновления
+			_options.reloadContainer = $e.find('.reload-container'); // Container of animation
 			_options.reloadButton = $e.find('.reload-button');
 			_options.reloadButton.click(function () {
 				_observe();
 				return false;
 			});
-			_options.reloadData = $e.find('.reload-data'); // Контейнер для данных после обновления
-			// Устанавливаем таймер первоначальной загрузки
+			_options.reloadData = $e.find('.reload-data'); // Container of data
+			// Set timer of initial load
 			if (_options.autoLoad) {
 				setTimeout(function () {
 					_observe();
-				}, _options.idle);
+				}, _options.delay);
 			}
-			// Устанавливаем таймер автообновления
+			// Set timer of autoreload
 			if (_options.autoReload) {
 				setInterval(function () {
 					_observe();

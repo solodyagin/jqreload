@@ -1,16 +1,16 @@
 # jqReload
-jQuery plugin for autoreload information in Bootstrap Panels
+Плагин jQuery для автообновления информации на Bootstrap панелях
 
-Based on[bootstrap-reload](https://github.com/saschavv/bootstrap-reload)
+Основан на плагине [bootstrap-reload](https://github.com/saschavv/bootstrap-reload)
 
 *Read this in other languages: [English](README.md), [Russian](README.ru.md).*
 
-## Dependency
+## Зависимости
 * [jQuery](https://github.com/jquery/jquery)
 * [Bootstrap](https://github.com/twbs/bootstrap)
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 
-## Usage
+## Применение
 ```html
 <div class="container">
 	<!-- [jqReload widget] -->
@@ -31,18 +31,18 @@ $(".panel").jqreload(options);
 
 ```
 
-## Options / Defaults
+## Настройки по умолчанию
 ```javascript
 {
-	autoLoad: true, // Initial load
-	delay: 3000, // Delay of initial load
-	autoReload: true, // Autoreload
-	interval: 60000, // Interval of autoreload
-	dataType: 'html', // The type of data that you're expecting back from the server (see jQuery.ajax())
+	autoLoad: true, // Первоначальная загрузка
+	delay: 3000, // Задержка перед первоначальной загрузкой	
+	autoReload: true, // Автообновление
+	interval: 60000, // Интервал автообновления
+	dataType: 'html', // Тип данных, соответствует dataType в jQuery.ajax()
 	beforeLoad: false, // function ($e)
 	afterLoad: false // function ($e, data)
 }
 ```
 
-## Examples
-An example of updating a table with data obtained in json format: [Example 1](https://cdn.rawgit.com/solodyagin/jquery.reload/master/examples/example1.html)
+## Примеры
+Пример обновления таблицы данными, полученными в json формате: [Example 1](https://cdn.rawgit.com/solodyagin/jquery.reload/master/examples/example1.html)
