@@ -45,4 +45,4 @@ $(".panel").jqreload(options);
 ```
 
 ## Examples
-An example of updating a table with data obtained in json format: [Example 1](https://cdn.rawgit.com/solodyagin/jquery.reload/master/examples/example1.html)
+An example of updating a table with data obtained in json format: [Example](http://solodyagin.github.io/juery.reload/index.html)
