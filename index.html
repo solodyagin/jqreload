@@ -2,18 +2,18 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>Example 1</title>
+		<title>Example</title>
 		<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="//cdn.rawgit.com/solodyagin/jquery.reload/master/jquery.reload.js"></script>
+		<script src="jquery.reload.js"></script>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="//cdn.rawgit.com/solodyagin/jquery.reload/master/jquery.reload.css">
+		<link rel="stylesheet" href="jquery.reload.css">
 		<script>
-			$(document).ready(function () {
+			$(function () {
 				$('#panel1').jqreload({
-					delay: 2000,
+					delay: 1000,
 					interval: 60000,
 					dataType: 'json',
 					beforeLoad: function ($e) {
@@ -31,8 +31,8 @@
 	</head>
 	<body>
 		<div class="container">
-			<div id="panel1" class="panel panel-default" data-url="//cdn.rawgit.com/solodyagin/jquery.reload/master/examples/data.json">
-				<div class="panel-heading">Panel 1 <a class="pull-right" href="javascript:;"><span class="reload-button fa fa-refresh"></span></a></div>
+			<div id="panel1" class="panel panel-default" data-url="example.json">
+				<div class="panel-heading">Panel 1 <a class="pull-right" href="javascript:void(0);"><span class="reload-button fa fa-refresh"></span></a></div>
 				<div class="panel-body reload-panel">
 					<div class="reload-container"><i class="reload-spinner fa fa-spinner fa-spin fa-5x"></i></div>
 					<div class="reload-data">

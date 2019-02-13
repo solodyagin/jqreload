@@ -45,4 +45,4 @@ $(".panel").jqreload(options);
 ```
 
 ## Примеры
-Пример обновления таблицы данными, полученными в json формате: [Example 1](https://cdn.rawgit.com/solodyagin/jquery.reload/master/examples/example1.html)
+Пример обновления таблицы данными, полученными в json формате: [Example](https://solodyagin.github.io/jquery.reload/)
