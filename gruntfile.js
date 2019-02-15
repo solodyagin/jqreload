@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 					module: true
 				}
 			},
-			files: ['jquery.reload.js']
+			files: ['source/jquery.reload.js']
 		},
 
 		uglify: {
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'jquery.reload.min.js': 'jquery.reload.js'
+					'dist/jquery.reload.min.js': 'source/jquery.reload.js'
 				}
 			}
 		},
@@ -29,17 +29,17 @@ module.exports = function(grunt) {
 		cssmin: {
 			main: {
 				files: {
-					'jquery.reload.min.css': 'jquery.reload.css'
+					'dist/jquery.reload.min.css': 'source/jquery.reload.css'
 				}
 			}
 		},
 
 		copy: {
 			main: {
-				files: [{
-					src: ['jquery.reload.min.js', 'jquery.reload.min.css'],
-					dest: 'docs/'
-				}]
+				expand: true,
+				cwd: 'dist/',
+				src: ['**'],
+				dest: 'docs/'
 			}
 		},
 
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			main: {
-				files: ['jquery.reload.js'],
+				files: ['source/jquery.reload.js'],
 				tasks: ['check', 'minify', 'copy'],
 				options: {
 					atBegin: true

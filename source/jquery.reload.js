@@ -32,13 +32,11 @@
 				return false;
 			});
 			_options.reloadData = $e.find('.reload-data'); // Container of data
-			// Set timer of initial load
 			if (_options.autoLoad) {
 				setTimeout(function () {
 					_observe();
 				}, _options.delay);
 			}
-			// Set timer of autoreload
 			if (_options.autoReload) {
 				setInterval(function () {
 					_observe();
