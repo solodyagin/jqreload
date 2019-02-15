@@ -15,9 +15,9 @@
 <div class="container">
 	<!-- [jqReload widget] -->
 	<div class="panel panel-default" data-url="/fetch-data">
-		<div class="panel-heading">jqReload Widget <a class="pull-right" href="javascript:;"><span class="reload-button fa fa-refresh"></span></a></div>
+		<div class="panel-heading">jqReload Widget <a class="pull-right" href="javascript:void(0);"><span class="reload-button fas fa-sync"></span></a></div>
 		<div class="panel-body reload-panel">
-			<div class="reload-container"><i class="reload-spinner fa fa-spinner fa-spin fa-5x"></i></div>
+			<div class="reload-container"><i class="reload-spinner fas fa-spinner fa-spin fa-5x"></i></div>
 			<div class="reload-data">
 			<!-- The Received data will be placed here -->
 			</div>
@@ -45,4 +45,4 @@ $(".panel").jqreload(options);
 ```
 
 ## Примеры
-Пример обновления таблицы данными, полученными в json формате: [Example](https://solodyagin.github.io/jquery.reload/)
+Пример обновления таблицы данными, полученными в json формате: [Example 1](https://solodyagin.github.io/jquery.reload/)

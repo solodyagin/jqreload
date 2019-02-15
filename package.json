@@ -1,0 +1,19 @@
+{
+	"name": "jquery.reload",
+	"version": "1.0.2",
+	"description": "jQuery plugin to add loader to Bootstrap panels + auto fetch data from server",
+	"license": "MIT",
+	"devDependencies": {
+		"grunt": "latest",
+		"grunt-contrib-connect": "latest",
+		"grunt-contrib-copy": "latest",
+		"grunt-contrib-cssmin": "latest",
+		"grunt-contrib-jshint": "latest",
+		"grunt-contrib-uglify": "latest",
+		"grunt-contrib-watch": "latest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/solodyagin/jquery.reload.git"
+	}
+}

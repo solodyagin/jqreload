@@ -1,9 +1,10 @@
-/*
- * jqReload - jQuery plugin for autoreload information in Bootstrap Panels
+/*!
+ * jqReload - jQuery plugin to add loader to Bootstrap panels + auto fetch data from server
  * Based on https://github.com/saschavv/bootstrap-reload
+ * @author: Sergey Solodyagin (solodyagin@gmail.com)
  * @license: MIT
- * @version: 1.0.2
- * @requires: jQuery v1.12.4+, Font Awesome v4.7.0+, Bootstrap v3.3.7
+ * @version: 1.0.3
+ * @requires: jQuery v1.12.4+, Font Awesome v5.0.0+, Bootstrap v3.3.7
  */
 
 (function ($) {

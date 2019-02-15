@@ -2,17 +2,18 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>Example</title>
+		<title>jqReload Examples</title>
 		<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="jquery.reload.js"></script>
+		<script src="jquery.reload.min.js"></script>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="jquery.reload.css">
+		<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+		<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="jquery.reload.min.css">
 		<script>
 			$(function () {
-				$('#panel1').jqreload({
+				$('#example1').jqreload({
 					delay: 1000,
 					interval: 60000,
 					dataType: 'json',
@@ -31,10 +32,10 @@
 	</head>
 	<body>
 		<div class="container">
-			<div id="panel1" class="panel panel-default" data-url="example.json">
-				<div class="panel-heading">Panel 1 <a class="pull-right" href="javascript:void(0);"><span class="reload-button fa fa-refresh"></span></a></div>
+			<div id="example1" class="panel panel-default" data-url="example1.json">
+				<div class="panel-heading">Example 1 <a class="pull-right" href="javascript:void(0);"><span class="reload-button fas fa-sync"></span></a></div>
 				<div class="panel-body reload-panel">
-					<div class="reload-container"><i class="reload-spinner fa fa-spinner fa-spin fa-5x"></i></div>
+					<div class="reload-container"><i class="reload-spinner fas fa-spinner fa-spin fa-5x"></i></div>
 					<div class="reload-data">
 						<table class="table table-bordered table-condensed"></table>
 					</div>
