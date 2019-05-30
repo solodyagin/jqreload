@@ -5,6 +5,8 @@ Also includes handler for manual trigger and timed intervals.
 
 Based on [bootstrap-reload](https://github.com/saschavv/bootstrap-reload)
 
+Examples: [Examples](https://solodyagin.github.io/jquery.reload/)
+
 *Read this in other languages: [English](README.md), [Russian](README.ru.md).*
 
 ## Dependency
@@ -17,7 +19,7 @@ Based on [bootstrap-reload](https://github.com/saschavv/bootstrap-reload)
 <div class="container">
 	<!-- [jqReload widget] -->
 	<div class="panel panel-default" data-url="/fetch-data">
-		<div class="panel-heading">jqReload Widget <a class="pull-right" href="javascript:void(0);"><span class="reload-button fas fa-sync"></span></a></div>
+		<div class="panel-heading">jqReload Widget <a class="reload-button pull-right" href="javascript:void(0);"><i class="fas fa-sync"></i></a></div>
 		<div class="panel-body reload-panel">
 			<div class="reload-container"><i class="reload-spinner fas fa-spinner fa-spin fa-5x"></i></div>
 			<div class="reload-data">
@@ -45,6 +47,3 @@ $(".panel").jqreload(options);
 	afterLoad: false // function ($e, data)
 }
 ```
-
-## Examples
-An example of updating a table with data obtained in json format: [Example 1](https://solodyagin.github.io/jquery.reload/)

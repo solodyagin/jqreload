@@ -11,11 +11,12 @@
 		<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
 		<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="jquery.reload.min.css">
+		<link rel="stylesheet" href="demo.css">
 		<script>
 			$(function () {
 				$('#example1').jqreload({
 					delay: 1000,
-					interval: 60000,
+					interval: 30000,
 					dataType: 'json',
 					beforeLoad: function ($e) {
 						$e.find('.reload-data table').empty();
@@ -31,14 +32,41 @@
 		</script>
 	</head>
 	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">jqReload Examples</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="https://github.com/solodyagin/jquery.reload">GitHub</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
 		<div class="container">
-			<div id="example1" class="panel panel-default" data-url="example1.json">
-				<div class="panel-heading">Example 1 <a class="pull-right" href="javascript:void(0);"><span class="reload-button fas fa-sync"></span></a></div>
-				<div class="panel-body reload-panel">
-					<div class="reload-container"><i class="reload-spinner fas fa-spinner fa-spin fa-5x"></i></div>
-					<div class="reload-data">
-						<table class="table table-bordered table-condensed"></table>
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- [jqReload widget] -->
+					<div id="example1" class="panel panel-default" data-url="example1.json">
+						<div class="panel-heading">Example 1: An example of updating a table with data obtained in json format <a class="reload-button pull-right" href="javascript:void(0);"><i class="fas fa-sync"></i></a></div>
+						<div class="panel-body reload-panel">
+							<div class="reload-container"><i class="reload-spinner fas fa-spinner fa-spin fa-5x"></i></div>
+							<div class="reload-data">
+								<table class="table table-bordered table-condensed"></table>
+							</div>
+						</div>
 					</div>
+					<!-- [/jqReload widget] -->
+
 				</div>
 			</div>
 		</div>
