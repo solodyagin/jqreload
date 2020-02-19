@@ -42,8 +42,12 @@ $(".panel").jqreload(options);
 	delay: 3000, // Delay of initial load
 	autoReload: true, // Autoreload
 	interval: 60000, // Interval of autoreload
-	dataType: 'html', // The type of data that you're expecting back from the server (see jQuery.ajax())
 	beforeLoad: false, // function ($e)
-	afterLoad: false // function ($e, data)
+	afterLoad: false, // function ($e, data)
+	ajax: {
+		method: 'GET',
+		dataType: 'html', // The type of data that you're expecting back from the server (see jQuery.ajax())
+		data: {}
+	}
 }
 ```

@@ -3,7 +3,7 @@
  * Based on https://github.com/saschavv/bootstrap-reload
  * @author: Sergey Solodyagin (solodyagin@gmail.com)
  * @license: MIT
- * @version: 1.0.4
+ * @version: 1.0.5
  * @requires: jQuery v1.12.4+, Font Awesome v5.0.0+, Bootstrap v3.3.7
  */
 
@@ -17,9 +17,13 @@
 			delay: 3000, // Delay of initial load
 			autoReload: true, // Autoreload
 			interval: 60000, // Interval of autoreload
-			dataType: 'html', // The type of data that you're expecting back from the server (see jQuery.ajax())
 			beforeLoad: false, // function ($e)
-			afterLoad: false // function ($e, data)
+			afterLoad: false, // function ($e, data)
+			ajax: {
+				method: 'GET',
+				dataType: 'html', // The type of data that you're expecting back from the server (see jQuery.ajax())
+				data: {}
+			}
 		}
 	};
 
@@ -27,9 +31,9 @@
 	var jqReload = function ($e, options) {
 
 		// Private variables and methods
-		var _data = $e.data('jqreload');
-		var _userOptions = (typeof options === 'function') ? {afterLoad: options} : options;
-		var _options = $.extend({}, $.jqreload.defaults, _userOptions, _data || {});
+		var _data = $e.data('jqreload'),
+			_userOptions = typeof options === 'function' ? {afterLoad: options} : options,
+			_options = $.extend(true, {}, $.jqreload.defaults, _userOptions, _data || {});
 
 		var _init = function () {
 			_options.reloadContainer = $e.find('.reload-container'); // Container of animation
@@ -51,18 +55,22 @@
 			}
 		};
 
-		var _load = function() {
+		var _load = function () {
+			if (_options.beforeLoad) {
+				_options.beforeLoad($e);
+			}
 			_options.reloadButton.addClass('fa-spin');
 			_options.reloadContainer.fadeIn();
 			$.ajax({
-				method: 'GET',
+				method: _options.ajax.method,
 				url: $e.data('url'),
-				dataType: _options.dataType,
-				beforeSend: function() {
+				dataType: _options.ajax.dataType,
+				data: _options.ajax.data,
+				/*beforeSend: function() {
 					if (_options.beforeLoad) {
 						_options.beforeLoad($e);
 					}
-				},
+				},*/
 				success: function (data) {
 					if (_options.afterLoad) {
 						_options.afterLoad($e, data);
@@ -114,8 +122,8 @@
 	// Define the jqreload plugin method and loop
 	$.fn.jqreload = function (options) {
 		return this.each(function () {
-			var $this = $(this);
-			var data = $this.data('jqreload');
+			var $this = $(this),
+				data = $this.data('jqreload');
 
 			// Instantiate jqReload on this element if it hasn't been already
 			if (data && data.initialized) {

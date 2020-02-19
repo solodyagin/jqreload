@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -17,7 +17,9 @@
 				$('#example1').jqreload({
 					delay: 1000,
 					interval: 30000,
-					dataType: 'json',
+					ajax: {
+						dataType: 'json'
+					},
 					beforeLoad: function ($e) {
 						$e.find('.reload-data table').empty();
 					},

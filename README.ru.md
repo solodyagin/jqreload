@@ -40,8 +40,12 @@ $(".panel").jqreload(options);
 	delay: 3000, // Задержка перед первоначальной загрузкой	
 	autoReload: true, // Автообновление
 	interval: 60000, // Интервал автообновления
-	dataType: 'html', // Тип данных, соответствует dataType в jQuery.ajax()
 	beforeLoad: false, // function ($e)
-	afterLoad: false // function ($e, data)
+	afterLoad: false, // function ($e, data)
+	ajax: {
+		method: 'GET',
+		dataType: 'html', // Тип данных, соответствует dataType в jQuery.ajax()
+		data: {}
+	}
 }
 ```
